@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Carrinho {
     private List<Produto> produtos;
+    private String tipoP;
   
 
     public Carrinho() {
@@ -15,6 +16,14 @@ public class Carrinho {
         this.produtos = produtos;
     }
 
+    public String getTipoP() {
+        return tipoP;
+    }
+
+    public void setTipoP(String tipoP) {
+        this.tipoP = tipoP;
+    }
+    
     public List<Produto> getProdutos() {
         return produtos;
     }

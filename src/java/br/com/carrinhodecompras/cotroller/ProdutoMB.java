@@ -1,9 +1,7 @@
-
 package br.com.carrinhodecompras.cotroller;
 
 import br.com.carrinhodecompras.domain.Produto;
 import br.com.carrinhodecompras.util.UtilMessages;
-import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
@@ -16,7 +14,8 @@ public class ProdutoMB {
     
     private Produto produto;
     private List<Produto> produtos;
-    private float soma;
+   
+
 
     public ProdutoMB() {
         produtos = new ArrayList<>();
@@ -56,13 +55,7 @@ public class ProdutoMB {
         return "new.xhtml?faces-redirect=true";
         
    }
-    public String somar(){
-        for(Produto p: produtos){
-            soma =+ produto.getPreco();
-        }
-        return "pagamento.xhtml?faces-redirect=true";
-    }
-
+    
     public Produto getProduto() {
         return produto;
     }
@@ -78,6 +71,5 @@ public class ProdutoMB {
     public void setProdutos(List<Produto> produtos) {
         this.produtos = produtos;
     }
- 
- }
+}
   

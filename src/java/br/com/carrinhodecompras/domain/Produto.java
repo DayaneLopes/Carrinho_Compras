@@ -6,13 +6,12 @@ public class Produto implements Serializable{
     
     private String titulo; 
     private Float preco;
-
+    
     public Produto() {
     }
 
     public Produto(String titulo) {
         this.titulo = titulo;
-        
     }
 
     public Float getPreco() {
@@ -23,13 +22,16 @@ public class Produto implements Serializable{
         this.preco = preco;
     }
 
-  
- 
     public String getTitulo() {
         return titulo;
     }
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
-    }           
+    }       
+
+ 
+    
+
+    
 }

@@ -11,25 +11,19 @@
         <ui:define name="content">
              <div class="ui-g">
                 <div class="ui-g-1"></div>
-                <div class="ui-g-9">
-                    <h1>Pagamento</h1>
+                <div class="ui-g-10">
+                    <h1>Carrinho</h1>
                 </div>
-                <div class="ui-g-1">
-                    <p:commandLink action="#{produtoMB.somar()}" >
-                        <p:graphicImage url="/resources/img/pg.png"
-                                        height="40" width="60" title="Somar"
-                                        style="margin-top: 20px; float: right;"/>
-                    </p:commandLink>
-                </div>
+                
                 <div class="ui-g-1"></div>
                 
                 <div class="ui-g-1"></div>
                 <div class="ui-g-10">
-                    <p:dataTable value="#{carrinhoMB.carrinho.produtos}" var="carrinho"
+                    <p:dataTable value="#{carrinhoMB.carrinho}" var="carrinho"
                                  paginator="true" paginatorPosition="bottom"
                                  rows="10" emptyMessage="Nenhum registro encontrado">
                         <f:facet name="header">Listagem de Produtos</f:facet>
-                        <f:facet name="footer">Total de Registros: #{carrinhoMB.carrinho.produtos.size()}</f:facet>
+                        <f:facet name="footer">Total de Registros: #{carrinhoMB.carrinho.size()}</f:facet>
                         <p:column headerText="Nome do Produto" sortBy="">
                             <h:outputText value="#{carrinho.titulo}"/>
                         </p:column>  
@@ -40,13 +34,20 @@
                             <p:commandButton icon="ui-icon-trash" action="#{carrinhoMB.excluir(carrinho)}"
                                              onclick="if(!confirm('Confirma exclusão?'))return false" update="form"/>
                         </p:column>
-                       
+                        <div class="ui-g-11">
+                            <p:commandButton icon="ui-icon-trash" action="#{carrinhoMB.excluir(carrinho)}"
+                                             onclick="if (!confirm('Confirma exclusão?'))return false" update="form"/>
+                       </div>
                     </p:dataTable>
                 </div>
+                <div class="ui-g-1"></div>
                 
-               
-                
-                
+                <div class="ui-g-1"></div>
+                <div class="ui-g-10">
+                    <p:commandButton icon="ui-icon-check" action="#{carrinhoMB.somar(carrinho)}"
+                                           update="form"/>
+                </div>
+                <div class="ui-g-1"></div>
             </div>
         </ui:define>
     </ui:composition>
